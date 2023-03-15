@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <script src="main.js" defer ></script>
+</head>
+<body>
+    <h2>CAMPUS</h2>
+    <fieldset>
+        <form id="formulario">
+            <fieldset>
+                <legend>Sedes</legend><br>
+                <form id="formulario_sedes">
+                    <input type="text" name="name_Sede" placeholder="Nombre de las sedes">
+                    <input type="submit" value="Guardar">
+                </form>
+            </fieldset>    
+        </form><br>
+        
+        <!-- Trainers -->
+        <fieldset>
+            <legend>Trainers</legend><br>
+            <form id="trainers">
+                <fieldset>
+                    <legend>Información personal</legend>
+                    <form id="informacion_trainers">    
+                        <span>Nombre: </span>
+                        <input type="text" name="nombre_trainer" placeholder="Ingrese su nombre">
+                        <span>Telefono: </span>
+                        <input type="tel" name="telefono_trainer" placeholder="Ingrese su telefono">
+                        <!-- los team van a tener valores predeterminados -->
+                        <input type="submit" value="">
+                    </form>
+                </fieldset><br>
+                
+                <fieldset>
+                    <legend>Team</legend>
+                    <form id="">
+                        <div>
+                            <span>Selecciona el team: </span>
+                            <select name="select_team_trainer" id="">
+                        </div>
+                            <option></option>
+                            <!-- enlazar los value con el team (tienen el mismo valor(variable)) para que muestre las opciones por medio de js -->
+                            <option value="">Team 1</option>
+                            <option value="">Team 2</option>
+                            <option value="">Team 3</option>
+                            <option value="">Team 4</option>
+                        </select>
+                        <input type="text" name="dia">
+                        <input type="text" name="hora">
+                        <input type="email" name="email_trainers">
+                        <input type="text" name="salon">    
+                        <input type="submit">
+                    </form>
+                </fieldset><br>
+
+                <fieldset>
+                    <legend>salon</legend>
+                    <form id="">
+
+                        <!-- en salon, agregar número y piso -->
+                        <input type="text" name="numero">
+                        <input type="text" name="numero_piso">
+                        <input type="submit">
+                    </form>
+                </fieldset><br>
+            </form>
+        </fieldset><br>
+            
+        <!-- Campers -->
+        <fieldset>
+            <legend>Camper</legend><br>
+            <form id="">
+                <fieldset>
+                    <form id="">
+                        <input type="text" name="nombre_camper">
+                        <input type="tel" name="telefono_camper">
+                        <!-- seleccionar el team -->
+                        <!-- los team van a tener valores predeterminados -->
+                        <input type="text" name="team">
+                        <input type="submit">
+                    </form>
+                </fieldset>
+                <!-- team -->
+                <fieldset>
+                    <legend>Team</legend>
+                    <form id="">
+                        <input type="text" name="dia">
+                        <input type="text" name="hora">
+                        <input type="email" name="email_camper">
+                        <input type="text" name="salon">
+                        <input type="submit">
+                    </form>
+                </fieldset><br>
+                <!-- en llegado caso falten los horarios de ingles y ser, agregarlos aqui :3 -->
+                <fieldset>
+                    <legend>salon</legend>
+                    <form id="">
+                        <!-- en salon, agregar número y piso -->
+                        <input type="text" name="numero">
+                        <input type="text" name="numero_piso">
+                        <input type="submit">
+                    </form>
+                </fieldset><br>
+                
+                <!-- nivel actual -->
+                <fieldset>
+                    <legend>Nivel Actual</legend>
+                    <form id="">
+                        <input type="text" name="barrio">
+                        <input type="text" name="medio_transporte">    
+                        <input type="submit">
+                    </form>
+                </fieldset>
+            </form>
+        </fieldset><br>
+    
+        <fieldset>
+            <legend>Niveles</legend><br>
+            <!-- pre-requisito -->
+            <input type="text">
+            <!-- tecnologia a la que pertenece -->
+            <input type="text">
+            <!-- electiva u obligatoria -->
+            <input type="text">
+            <input type="submit">
+        </fieldset><br>
+    
+        <fieldset>
+            <legend>RoadMap</legend><br>
+            <form id="">
+                <input type="text" name="num_creditos">
+                <input type="date" name="año">
+                <input type="number" name="numero_asignaturas">
+                <input type="submit">
+            </form>
+        </fieldset><br>
+    </fieldset>
+</body>
+</html>
