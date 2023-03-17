@@ -5,188 +5,214 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
-    <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+
 </head>
 
 <body>
-    <main>
-        <!-- DATOS DE CONTACTO -->
-        <section>
+    <!-- sedes -->
+    <section class="section_Sedes">
+        <div>
+            <h2>CAMPUS</h2>
+        </div>
+        <div>
             <fieldset>
-                <legend>Sedes</legend>
-                <form id="datos_Contacto">
-                    <label for="sede">Ingrese la sede: </label>
-                    <input name="sede" type="text" placeholder="Ingrese sede">
-                    <input type="submit" value="Guardar">
+                <legend>Sedes</legend><br>
+                <form id="formulario_sedes">
+                    <span>Sedes: </span>
+                    <input type="text" name="name_Sede" placeholder="Registro de sedes">
+                    <input type="submit" value="Agregar Sede">
                 </form>
             </fieldset>
-        </section>
-        <!-- INSCRIPCIÓN -->
-        <section>
+            <br><br>
+        </div>
+        <div>
+            <span>Trainer o Camper: </span>
+            <select id="trainer_camper">
+                <option value=""></option>
+                <option value="trainer" id="trainer">Trainer</option>
+                <option value="camper" id="camper">Camper</option>
+            </select>
+            <br><br>
+        </div>
+    </section>
+
+    <!-- Trainers -->
+    <section class="section_Trainers">
+        <div>
             <fieldset>
-                <legend>Inscripción</legend>
-                <form id="inscripción">
-                    <span>Pre-requisitos:</span>
+                <legend>TRAINER</legend>
+                <form id="trainers">
+                    <br>
+                    <span>Nombre: </span>
+                    <input type="text" name="nombre_trainer" placeholder="Ingrese nombre">
+                    <br><br>
+                    <span>Telefono: </span>
+                    <input type="tel" name="telefono_trainer"  id="tel"   placeholder="Ingrese telefono">
+                    <!-- los team van a tener valores predeterminados -->
+                    <br>
+                    <br>
+
+                    <span>Selecciona los teams que maneja: </span>
+                    <select name="select_team_trainer">
+                        <option></option>
+                        <!-- enlazar los value con el team (tienen el mismo valor(variable)) para que muestre las opciones por medio de js -->
+                        <option value="Team_1" id="team_1">Team 1</option>
+                        <option value="Team_2" id="team_1">Team 2</option>
+                        <option value="Team_3" id="team_1">Team 3</option>
+                        <option value="Team_4" id="team_1">Team 4</option>
+                    </select>
+                    <span>y</span>
+                    <select name="select_team_trainer_2">
+                        <option></option>
+                        <!-- enlazar los value con el team (tienen el mismo valor(variable)) para que muestre las opciones por medio de js -->
+                        <option value="Team_1_2" id="team_1_2">Team 1</option>
+                        <option value="Team_2_2" id="team_1_2">Team 2</option>
+                        <option value="Team_3_2" id="team_1_2">Team 3</option>
+                        <option value="Team_4_2" id="team_1_2">Team 4</option>
+                    </select>
                     <br><br>
 
-                    <label for="ingresar">Desea Insgresar como Trainer o como Camper:</label>
-                    <select name="trainer_o_camper" id="select_trainer_o_camper">
-                        <option value="trainer_o_camper__trainer">Trainer</option>
-                        <option value="trainer_o_camper__camper">Camper</option>
-                    </select>
-                    <br>
-                    <br>
+                    <span>Email: </span>
+                    <input type="email" name="email_trainers" placeholder="Ingrese email">
+                    <br><br>
 
-                    <div class="formulario_para_trainer">
-                        <label for="edad_inscripción">Ingrese su edad:</label>
-                        <input name="edad_inscripción" type="number" placeholder="Edad">
+                    <span>Salón: </span>
+                    <select>
+                        <option value=""></option>
+                        <option value="">Apolo</option>
+                        <option value="">Artemis</option>
+                        <option value="">Sputnik</option>
+                    </select>
+                    <br><br>
+                    <span>Niveles:</samp>
+                    <select>
+                        <option value=""></option>
+                        <option value="">Básico</option>
+                        <option value="">Intermedio</option>
+                        <option value="">Avanzado</option>
+                    </select>
+                    <span>y</span>
+                    <select>
+                        <option value="">Básico</option>
+                        <option value="">Intermedio</option>
+                        <option value="">Avanzado</option>
+                    </select>
+                    <br><br>
+                    <!-- en salon, agregar número y piso -->
+                    <span>Piso:</span>
+                    <input type="text" name="numero_piso">
+                    <br><br>
+
+                    <span>Número del salón: </span>
+                    <input type="text" name="numero">
+                    <br><br>
+                    <fieldset>
+                        <legend>Horario</legend>
+                        <br>
+                        <span>Fecha: </span>
+                        <input type="date" name="dia">
                         <br><br>
-                        <label for="asignatura_trainer">Asiganatura a desempeñar:</label>
-                        <select name="select_asignatura" id="select_asignatura">
-                            <option value="software_skills">Softwar Skills</option>
-                            <option value="software_review">Software Review</option>
-                            <option value="ingles">Ingles</option>
-                            <option value="ser">Ser</option>
+
+                        <span>Hora: </span>
+                        <input type="time" name="hora">
+                        <br><br>
+                    </fieldset>
+                    <br><br>
+
+                    <input type="submit" value="Guardar">
+                    <br><br>
+                </form>
+            </fieldset>
+        </div>
+    </section>
+
+    <!-- Campers -->
+    <section class="section_Campers">
+        <fieldset>
+            <legend>Camper</legend><br>
+            <form id="">
+                <fieldset>
+                    <form id="">
+                        <span>Nombre: </span>
+                        <input type="text" name="nombre_camper" placeholder="Ingrese nombre: ">
+                        <br><br>
+
+                        <span>Número de celular: </span>
+                        <input type="tel" name="telefono_camper" placeholder="Ingrese numero de celular">
+                        <br><br>
+                        <!-- seleccionar el team -->
+                        <!-- los team van a tener valores predeterminados -->
+                        <span>Team al que pertenece:</span>
+                        <select>
+                            <option value=""></option>
+                            <option value="">Team 1</option>
+                            <option value="">Team 2</option>
+                            <option value="">Team 3</option>
+                            <option value="">Team 4</option>
                         </select>
                         <br><br>
 
-                        <div class="skills_review">
-                            <label for="conocimientos">Conocimientos Previos: </label>
-                            <input name="conocimientos" type="text" placeholder="...">
-                            <br><br>
-                            <label for="">Tecnologías que maneja: </label>
-                            <blockquote>
-                                <div class="left">
-                                    <label for="html">HTML</label>
-                                    <input name="html" type="checkbox">
-                                </div>
-                                <div class="left">
-                                    <label for="css">CSS</label>
-                                    <input name="css" type="checkbox">
-                                </div>
-                                <div class="left">
-                                    <label for="js">JavaScript</label>
-                                    <input name="js" type="checkbox">
-                                </div>
-                                <div class="left">
-                                    <label for="java">Java</label>
-                                    <input name="java" type="checkbox">
-                                </div>
-                                <div class="left">
-                                    <label for="c#">C#</label>
-                                    <input name="c#" type="checkbox">
-                                </div>
-                                <div class="left">
-                                    <label for="c++">C++</label>
-                                    <input name="c++" type="checkbox">
-                                </div>
-                                <div class="left">
-                                    <label for="python">Python</label>
-                                    <input name="python" type="checkbox">
-                                </div>
-                                <div class="left">
-                                    <label for="php">PHP</label>
-                                    <input name="php" type="checkbox">
-                                </div>
-                                <div class="left">
-                                    <label for="sql">SQL</label>
-                                    <input name="sql" type="checkbox">
-                                </div>
-                                <div class="left">
-                                    <label for="scartch">Scratch</label>
-                                    <input name="scartch" type="checkbox">
-                                </div>
-                            </blockquote>
-                            <br>
-                            <label for="">adjuntar hoja de vida :p</label>
-                        </div>
+                        <input type="submit" value="Guardar">
+                    </form>
+                </fieldset>
+                <br><br>
 
-                        <div class="ingles_ser">
-                            <label for="conocimientos">Conocimientos Previos: </label>
-                            <input name="conocimientos" type="text" placeholder="...">
-                            <br><br>
-                            <label for="">adjuntar hoja de vida :p</label>
-                        </div>
 
-                    </div>
-                    <div class="formulario_para_camper">
-                        <label for="nombre_camper"></label>
-                        <input name="nombre_camper" type="text">
-                        <br>
-                        <label for="telefono_camper"></label>
-                        <input name="telefono_camper" type="text">
-                        <br>
-                        <label for="localidad_camper"></label>
-                        <input type="text">
-                        <label for="medio_camper"></label>
-                        <div class="team_camper">
-                            <div class="horario"></div>
-                        </div>
-                    </div>
+                <!-- team -->
+                <fieldset>
+                    <legend>Team</legend>
+                    <form id="">
+                        <span>Dia: </span>
+                        <input type="date" name="dia">
+                        <br><br>
 
-                    <input type="submit" value="Guardar">
-                </form>
-            </fieldset>
-        </section>
-        <!-- FORMULARIO TRAINERS -->
-        <section>
-            <fieldset>
-                <legend>Formulario Trainers</legend>
-                <form id="formulario_trainers">
-                    <label for="nombre_trainer">Nombre: </label>
-                    <input name="nombre_trainer" type="text" placeholder="Ingrese su nombre">
-                    <br>
-                    <label for="telefono_trainer">Teléfono: </label>
-                    <input name="nombre_trainer" type="number" placeholder="Ingrese su número">
-                    <br>
-                    <label for="teams_trainer">Teams que maneja: </label>
-                    <select name="select_teams_trainer_1" id="select_1">
-                        <option value=""></option>
-                        <option value="team_1">Team 1</option>
-                        <option value="team_2">Team 2</option>
-                        <option value="team_3">Team 3</option>
-                        <option value="team_4">Team 4</option>
-                    </select>
-                    <br>
-                    <select name="select_teams_trainer_2" id="select_2">
-                        <option value=""></option>
-                        <option value="team_1">Team 1</option>
-                        <option value="team_2">Team 2</option>
-                        <option value="team_3">Team 3</option>
-                        <option value="team_4">Team 4</option>
-                    </select>
-                    <br>
-                    <label for="nombre_trainer">Nombre: </label>
-                    <input name="nombre_trainer" type="text" placeholder="Ingrese su nombre">
-                    <br>
-                    <label for="nombre_trainer">Nombre: </label>
-                    <input name="nombre_trainer" type="text" placeholder="Ingrese su nombre">
-                    <br>
-                    <label for="nombre_trainer">Nombre: </label>
-                    <input name="nombre_trainer" type="text" placeholder="Ingrese su nombre">
-                    <br>
+                        <span>Hora:</span>
+                        <input type="time" name="hora">
+                        <br><br>
 
-                </form>
-            </fieldset>
-        </section>
-        <!-- FORMULARIO CAMPERS -->
-        <section>
-            <fieldset>
-                <legend>Formulario Campers</legend>
-                <form id="formulario_campers"></form>
-            </fieldset>
-        </section>
-        <!-- ROADMAP -->
-        <section>
-            <fieldset>
-                <legend>RoadMap</legend>
-                <form id="roadMap"></form>
-            </fieldset>
-        </section>
-    </main>
+                        <span>Email: </span>
+                        <input type="email" name="email_camper" placeholder="Ingrese correo">
+                        <br><br>
 
+                        <span>Salón de skills:</span>
+                        <select>
+                            <option value=""></option>
+                            <option value="">Apolo</option>
+                            <option value="">Artemis</option>
+                            <option value="">Sputnik</option>
+                        </select>
+                        <br><br>
+                        <input type="submit" value="Guardar">
+                    </form>
+                </fieldset><br>
+                <!-- en llegado caso falten los horarios de ingles y ser, agregarlos aqui :3 -->
+            </form>
+        </fieldset><br>
+    </section>
+
+    <!-- RoadMap -->
+    <section class="section_RoadMap">
+        <fieldset>
+            <legend>RoadMap</legend><br>
+            <form id="">
+                <span>Numero de Créditos por año:</span>
+                <input type="text" name="num_creditos" placeholder="Ingrese creditos por año">
+                <br><br>
+
+                <span>Fecha: </span>
+                <input type="date" name="año">
+                <br><br>
+
+                <span>Numero de asignaturas: </span>
+                <input type="number" name="numero_asignaturas">
+                <br><br>
+                <input type="submit" value="Guardar">
+            </form>
+        </fieldset><br>
+    </section>
 </body>
 
 </html>
