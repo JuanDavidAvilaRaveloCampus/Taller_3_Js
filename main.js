@@ -1,90 +1,83 @@
-// formulario_sedes.style.color = "red"
-
-
-// SEDES
-let formulario_sedes = document.querySelector("#formulario_sedes");// EL ID ES DEL FORM
+// let fomulario = document.querySelector(`#campus`);
 let sedes = {};
+let trainer = {};
+let camper = {};
+let roadMap = {};
+let campus = [sedes, trainer, camper, roadMap]; //objeto padre
 
-formulario_sedes.addEventListener("submit", (e)=>{
-    e.preventDefault(); // No olvidar agregarle los paréntesis() // detiene el evento del formulario, y pasa toda la info al js
-    let data = Object.fromEntries(new FormData(e.target));
-    // Objet.fromEntries(new FormData(e.target)) --> "Toma a todos los input's que
-    // tengan el atributo 'name' como variables, y para el dato..."
-    sedes[`${data.name_Sede}`] = {}; // El 'name_Sede' es el name del input
-    alert(`"${data.name_Sede}" ha sido agregado como una de las nuevas sedes de CAMPUS`);
-    formulario_sedes.reset();
-});
+// Seleccionan las etiquetas con esas clases
+let formulario_sedes = document.querySelector('#formulario_sedes');// ID del form para almacenar los datos
+let seleccionar = document.querySelector(`#trainer_camper`); // Detector de cambios para desplegar el formulario de trainer o el de camper
+let formulario_trainer = document.querySelector(`#section_Trainers`);
+let formulario_camper = document.querySelector(`#section_Campers`);
+let formulario_roadMap = document.querySelector(`#section_RoadMap`);
 
-// SELECT: Despliega el formulario de Campers o Trainer, según sea la opción.
-let trainer_camper = document.querySelector('#trainer_camper');
-let section_Trainers = document.querySelector('.section_Trainers');
-let section_Campers = document.querySelector('.section_Campers');
+// Escuchadores de eventos
 
-trainer_camper.addEventListener("change", (e)=> {
-    if (e.target.value == 'trainer'){
-        section_Trainers.removeAttribute('class');
-    } else if (e.target.value == 'camper'){
-        section_Campers.removeAttribute('class');
+// Sedes
+formulario_sedes.addEventListener('submit', (e)=>{ // (e) --> Significa 'evento'
+    e.preventDefault(); //detiene al navegador, para que no redireccione a otra page
+    let form_sedes = Object.fromEntries(new FormData(e.target)); // Almacena los datos del input de la forma ( calve / valor ) del input
+    sedes[`${form_sedes.name_Sede}`] = []; // la sintaxis es {nombre_variable(objet.) + . + name del input del que se almacenarán datos}
+    formulario_sedes.reset(); //---> Reinicia el formulario
+});  
+
+
+// Desplegar "Trainer o Camper"
+seleccionar.addEventListener('change', (e)=>{
+    // let trainer_camper = document.querySelector(`#trainer_camper`); // Almacena el valor de la opción seleccionada
+    let trainer_camper = seleccionar.value;
+    if (trainer_camper == ""){
+            document.querySelector(`#section_Campers`).setAttribute('style', 'display: none;');
+            document.querySelector(`#section_Trainers`).setAttribute('style', 'display: none;');
+        } else if (trainer_camper == 'trainer'){
+            document.querySelector(`#section_Trainers`).removeAttribute('style'); //detecta el id especificado dentro del documento y remueve el atributo espeficicado, en este caso el style
+            document.querySelector(`#section_Campers`).setAttribute('style', 'display: none;');
+    } else if (trainer_camper == 'camper'){
+        document.querySelector(`#section_Campers`).removeAttribute('style');
+        document.querySelector(`#section_Trainers`).setAttribute('style', 'display: none;');
     }
-    // trainer_camper.reset();
 });
 
-// TRAINER
-let trainers = document.querySelector('#trainers'); //esta variable es global (es el form de todo el formulario llamado "TRAINER")
-let objeto_Trainers = {}; //este objeto es global para todo el bloke "TRAINERS"
-// Nombre:
-/**
- * !IMPORTANTISIMO
- * * Toca almacenar un objeto dentro de otro objeto, en este caso: almacenar
- * * los objetos nombre, teléfono, team, etc; dentro del objeto 'objeto_Trainers'
- */
-
-trainers.addEventListener('submit', (e)=>{
+// Formulario Trainer
+formulario_trainer.addEventListener('submit', (e)=>{
     e.preventDefault();
-    let data =Object.fromEntries(new FormData(e.target));
-    objeto_Trainers[`${data.nombre_trainer}`] = {};
-    trainers.reset();
+    let trainer = Object.fromEntries(new FormData(e.target));
+    
+    
+    formulario_trainer.reset();
 });
-// Teléfono
-let tel_trainer = {};
-trainers.addEventListener('submit', (e)=>{
+
+// Formulario Camper
+formulario_camper.addEventListener('submit', (e)=>{
+
     e.preventDefault();
-    let data =Object.fromEntries(new FormData(e.target));
-    tel_trainer[`${data.telefono_trainer}`] = {};
-    trainers.reset();
+    console.log("holi");
+    let camper = Object.fromEntries(new FormData(e.target));
+    
+    
+    formulario_camper.reset();
 });
-// Teams que maneja
+formulario_roadMap.addEventListener('submit', (e)=>{
 
-//primer team
-let select_team_trainer = {};
-let team_1 = document.querySelector('#team_1');
-let team_2 = document.querySelector('#team_2');
-let team_3 = document.querySelector('#team_3');
-let team_4 = document.querySelector('#team_4');
 
-trainers.addEventListener("submit", (e)=> {
-    if (e.target.value == 'team_1'){
-        let data = Object.fromEntries(new FormData(e.target));
-        objeto_Trainers[`${data.name_Sede}`] = [];
-    } else if (e.target.value == 'camper'){
-    }
-    trainers.reset();
+    e.preventDefault();
+    let roadMap = Object.fromEntries(new FormData(e.target));
+    
+    
+    formulario_roadMap.reset();
+
+
 });
 
 
-//segundo team
-// let team_1_2 = document.querySelector('#team_1_2');
-// let team_2_2 = document.querySelector('#team_2_2');
-// let team_3_2 = document.querySelector('#team_3_2');
-// let team_4_2 = document.querySelector('#team_4_2');
-// let team_trainer_2 = {};
 
-// trainer_camper.addEventListener("change", (e)=> {
-//     if (e.target.value == 'trainer'){
-//         section_Trainers.removeAttribute('class');
-//     } else if (e.target.value == 'camper'){
-//         section_Campers.removeAttribute('class');
-//     }
-//     trainer_camper.reset();
-// });
 
+
+// console.log(`${sedes[0]}`);
+// console.log(`${campus[0]}`); ---> Preguntar: ¿Cómo hacer que se imprima el nombre de la sede?.
+
+
+
+
+// sedes
