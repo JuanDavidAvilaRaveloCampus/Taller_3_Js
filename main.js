@@ -1,16 +1,43 @@
+
+
+// Almacen
+let formulario_sedes = document.querySelector('#formulario_sedes');// ID del form para almacenar los datos
+let trainers = document.querySelector('#trainers inputs');// ID del form para almacenar los datos
+let campers = document.querySelector('#campers');// ID del form para almacenar los datos
+let roadMaps = document.querySelector('#roadMaps');// ID del form para almacenar los datos
+
+//Nombres variablres:'))
+let nombre = {};
+let telefono = {};
+let team = {};
+let team2 = {};
+let email = {};
+let nivel = {};
+let nivel2 = {};
+let salon = {};
+let piso = {};
+let numero = {};
+let asignatura = {};
+let remota_o_precencial = {};
+
+
 // let fomulario = document.querySelector(`#campus`);
 let sedes = {};
-let trainer = {};
-let camper = {};
+let trainer = {
+    // nombre, telefono, team, email, nivel, salon, piso, numero, asignatura, remota_o_precencial, nivel2, team2
+};
+let camper = {
+    // nombre, telefono, team, email, nivel
+};
 let roadMap = {};
-let campus = [sedes, trainer, camper, roadMap]; //objeto padre
+let campus = { sedes, trainer, camper, roadMap }; //objeto padre
+
 
 // Seleccionan las etiquetas con esas clases
-let formulario_sedes = document.querySelector('#formulario_sedes');// ID del form para almacenar los datos
 let seleccionar = document.querySelector(`#trainer_camper`); // Detector de cambios para desplegar el formulario de trainer o el de camper
-let formulario_trainer = document.querySelector(`#section_Trainers`);
-let formulario_camper = document.querySelector(`#section_Campers`);
-let formulario_roadMap = document.querySelector(`#section_RoadMap`);
+let section_trainer = document.querySelector(`#section_Trainers`);
+let section_camper = document.querySelector(`#section_Campers`);
+let section_roadMap = document.querySelector(`#section_RoadMap`);
 
 // Escuchadores de eventos
 
@@ -40,35 +67,32 @@ seleccionar.addEventListener('change', (e)=>{
 });
 
 // Formulario Trainer
-formulario_trainer.addEventListener('submit', (e)=>{
+trainer.addEventListener('submit', (e) => {
     e.preventDefault();
-    let trainer = Object.fromEntries(new FormData(e.target));
-    
-    
-    formulario_trainer.reset();
+    let chale = Object.fromEntries(new FormData(e.target));
+    trainer[`${chale.trainer}`] = [];
+    trainer.reset();
 });
 
+// let listaSedes = () => {
+//     let opciones = document.querySelector("[name='sede']")
+//     opciones.innerHTML = null;
+//     for (let [val, id] of Object.entries(campus)) {
+//         console.log(val);
+//     };
+// };
+
 // Formulario Camper
-formulario_camper.addEventListener('submit', (e)=>{
+campers.addEventListener('submit', (e)=>{
 
     e.preventDefault();
     console.log("holi");
     let camper = Object.fromEntries(new FormData(e.target));
     
     
-    formulario_camper.reset();
+    campers.reset();
 });
-formulario_roadMap.addEventListener('submit', (e)=>{
 
-
-    e.preventDefault();
-    let roadMap = Object.fromEntries(new FormData(e.target));
-    
-    
-    formulario_roadMap.reset();
-
-
-});
 
 
 

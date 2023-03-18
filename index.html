@@ -21,7 +21,8 @@
                     <legend>Sedes</legend><br>
                     <form id="formulario_sedes">
                         <span>Sedes: </span>
-                        <input type="text" name="name_Sede" placeholder="Registro de sedes" required>
+                        <input type="text" name="name_Sede" placeholder="Registro de sedes" >
+                        <!-- required -->
                         <input type="submit" value="Agregar Sede" >
                     </form>
                 </fieldset>
@@ -49,12 +50,14 @@
                         <br>
                         <span>Nombre: </span>
                         <div>
-                            <input type="text" name="nombre_trainer" placeholder="Ingrese nombre" required>
+                            <input type="text" name="nombre_trainer" placeholder="Ingrese nombre" >
+                            <!-- required -->
                             <br><br>
                         </div>
                         <span>Telefono: </span>
                         <div>
-                            <input type="tel" name="telefono_trainer" id="tel" placeholder="Ingrese telefono" required>
+                            <input type="tel" name="telefono_trainer" id="tel" placeholder="Ingrese telefono" >
+                            <!-- required -->
                             <!-- los team van a tener valores predeterminados -->
                             <br>
                         </div>
@@ -82,45 +85,48 @@
                         <br><br>
                         <span>Email: </span>
                         <div>
-                            <input type="email" name="email_trainers" placeholder="Ingrese email" required>
+                            <input type="email" name="email_trainers" placeholder="Ingrese email" >
+                            <!-- required -->
                         </div>
                         <br><br>
                         <span>Salón: </span>
                         <div>
-                            <select>
+                            <select name="salon_trainer">
                                 <option value=""></option>
-                                <option value="">Apolo</option>
-                                <option value="">Artemis</option>
-                                <option value="">Sputnik</option>
+                                <option value="apolo">Apolo</option>
+                                <option value="artemis">Artemis</option>
+                                <option value="sputnik">Sputnik</option>
                             </select>
                         </div>
                         <br><br>
                         <span>Niveles:</samp>
                         <div>
-                            <select>
+                            <select name="nivel_trainer">
                                 <option value=""></option>
-                                <option value="">Básico</option>
-                                <option value="">Intermedio</option>
-                                <option value="">Avanzado</option>
+                                <option value="basico">Básico</option>
+                                <option value="intermedio">Intermedio</option>
+                                <option value="avanzado">Avanzado</option>
                             </select>
                             <span>y</span>
-                            <select>
+                            <select name="nivel_2_trainer">
                                 <option value=""></option>
-                                <option value="">Básico</option>
-                                <option value="">Intermedio</option>
-                                <option value="">Avanzado</option>
+                                <option value="basico">Básico</option>
+                                <option value="intermedio">Intermedio</option>
+                                <option value="avanzado">Avanzado</option>
                             </select>
                         </div>
                         <br><br>
                         <!-- en salon, agregar número y piso -->
                         <span>Piso:</span>
                         <div>
-                            <input type="text" name="numero_piso" required>
+                            <input type="text" name="numero_piso" >
+                            <!-- required -->
                             <br><br>
                         </div>
                         <span>Número del salón: </span>
                         <div>
-                            <input type="text" name="numero" required>
+                            <input type="text" name="numero" >
+                            <!-- required -->
                             <br><br>
                         </div>
                         <br>
@@ -209,12 +215,14 @@
                         <br><br>
                         <span>Fecha: </span>
                         <div>
-                            <input type="date" name="dia" required>
+                            <input type="date" name="dia" >
+                            <!-- required -->
                             <br><br>
                         </div>
                         <span>Hora: </span> <!--Horario -->
                         <div>
-                            <input type="time" name="hora" required>
+                            <input type="time" name="hora" >
+                            <!-- required -->
                             <br><br>
                         </div>
                         <input type="submit" value="Guardar" >
@@ -227,16 +235,18 @@
             <section id="section_Campers" style="display: none;"> <!-- style = 'display: none' --> 
                 <fieldset>
                     <legend>CAMPERS</legend>
-                    <form id="trainers">
+                    <form id="campers">
                         <br>
                         <span>Nombre: </span>
                         <div>
-                            <input type="text" name="nombre_trainer" placeholder="Ingrese nombre" required>
+                            <input type="text" name="nombre_trainer" placeholder="Ingrese nombre" >
+                            <!-- required -->
                             <br><br>
                         </div>
                         <span>Telefono: </span>
                         <div>
-                            <input type="tel" name="telefono_trainer" id="tel" placeholder="Ingrese telefono" required>
+                            <input type="tel" name="telefono_trainer" id="tel" placeholder="Ingrese telefono" >
+                            <!-- required -->
                             <!-- los team van a tener valores predeterminados -->
                             <br>
                         </div>
@@ -253,12 +263,14 @@
                         <br><br>
                         <span>Email: </span>
                         <div>
-                            <input type="email" name="email_trainers" placeholder="Ingrese email" required>
+                            <input type="email" name="email_trainers" placeholder="Ingrese email" >
+                            <!-- required -->
                         </div>
                         <br><br>
                         <span>Localidad: </span>
                         <div>
-                            <input name="ubicacion" type="text" placeholder="Ingrese su ubicación(lugar)" required>
+                            <input name="ubicacion" type="text" placeholder="Ingrese su ubicación(lugar)" >
+                            <!-- required -->
                         </div>
                         <br><br>
                         <span>Medio de transporte: </span>
@@ -301,17 +313,20 @@
             <section id="section_RoadMap" style="display: none;"> 
                 <fieldset>
                     <legend>RoadMap</legend><br>
-                    <form id="">
+                    <form id="roadMap">
                         <span>Numero de Créditos por año:</span>
-                        <input type="text" name="num_creditos" placeholder="Ingrese creditos por año" required>
+                        <input type="text" name="num_creditos" placeholder="Ingrese creditos por año" >
+                        <!-- required -->
                         <br><br>
 
                         <span>Fecha: </span>
-                        <input type="date" name="año" required>
+                        <input type="date" name="año" >
+                        <!-- required -->
                         <br><br>
 
                         <span>Numero de asignaturas:</span>
-                        <input type="number" name="numero_asignaturas" required>
+                        <input type="number" name="numero_asignaturas" >
+                        <!-- required -->
                         <br><br>
                         <input type="submit" value="Guardar" >
                     </form>
